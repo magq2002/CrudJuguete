@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <span class="h3">Listado de Juguetes</span>
-              <input [formControl]="searcher" class="form-control mt-4" type="text" placeholder="Buscar por nombre completo" aria-label="Search">
+              <input [(ngModel)]="filterItem" name="filterItem" class="form-control mt-4" type="text" placeholder="Buscar por nombre completo" aria-label="Search">
             
             <div class="items" *ngIf="items$ | async as items">
               <div class="table-responsive table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl table-responsive-xxl" >
@@ -17,13 +17,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let item of items; let i= index">
+                  <tr *ngFor="let item of items | filter: filterItem; let i= index  ">
                     <th>{{item.Id}}</th>
                     <td>{{item.Name}}</td>
                     <td>{{item.Tipo}}</td>
                     <td>{{item.Precio | currency}}</td>
                     <td>
-                        <i class="fas fa-edit fa-lg text-info" [routerLink]="['/edit-juguetes',item.Id]"></i>
+                        <i class="fas fa-edit fa-lg text-info" [routerLink]="['/edit-juguetes',item.Id,item.Name,item.Tipo,item.Precio]"></i>
                         <i (click)="eliminarJuguete(item.Id)"class="fas fa-trash-alt fa-lg text-danger"></i>
                     </td>
                   </tr>

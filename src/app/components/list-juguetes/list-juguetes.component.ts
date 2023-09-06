@@ -11,17 +11,18 @@ import { JuguetesService } from 'src/app/services/juguetes.service';
   styleUrls: ['./list-juguetes.component.css']
 })
 export class ListJuguetesComponent implements OnInit {
-  items:any;
+  items!: any[];
   items$!: Observable<Juguete[]>;
   searcher = new FormControl('');
-
+  filterItem ="";
 
   constructor(private conexion: JuguetesService, private router:Router,private toastr: ToastrService){
+    
     this.conexion.listaItem().subscribe(item=>{
       this.items = item;
-      console.log(this.items$);
     })
   }
+  
   ngOnInit(): void {
     this.items$ = this.conexion.getBusqueda();
     this.searcher.valueChanges.subscribe((search) =>{
@@ -40,5 +41,6 @@ export class ListJuguetesComponent implements OnInit {
       console.log('error');
     })
   }
+  
   
 }

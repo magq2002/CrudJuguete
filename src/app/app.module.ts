@@ -15,6 +15,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditJuguetesComponent } from './components/edit-juguetes/edit-juguetes.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { EditJuguetesComponent } from './components/edit-juguetes/edit-juguetes.
     ListJuguetesComponent,
     CreateJuguetesComponent,
     NavbarComponent,
-    EditJuguetesComponent
+    EditJuguetesComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { EditJuguetesComponent } from './components/edit-juguetes/edit-juguetes.
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    FormsModule,
     
     ReactiveFormsModule
     

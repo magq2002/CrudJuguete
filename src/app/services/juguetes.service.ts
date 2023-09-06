@@ -34,12 +34,10 @@ export class JuguetesService {
   async eliminar(Id: number){
     const db = getFirestore();
     const q= query(collection(db, "items"), where("Id", "==", Id))
-    console.log(Id);
     const querySnapshot = await getDocs(q);
     
     querySnapshot.forEach(doc => {
       const a=doc.id;
-      console.log(a, "=>", doc.data());
       this.eliminarjuguete(a, db);
     });
   }
@@ -47,16 +45,12 @@ export class JuguetesService {
   async update(juguete: any, Id:number){
     const db = getFirestore();
     const q= query(collection(db, "items"), where("Id", "==", Id))
-    console.log(Id);
     const querySnapshot = await getDocs(q);
     
     querySnapshot.forEach(doc => {
-      console.log("por aca pase 2");
       const a=doc.id;
-      console.log(a, "=>", doc.data());
       this.actualizarjuguete(a, db, juguete);
     });
-    console.log("pase3")
   }
   getBusqueda(filter = '') {
     const playersRef = collection(this.firestore, 'items');
@@ -76,4 +70,5 @@ export class JuguetesService {
       await updateDoc(docRef, { ...player });
     });
   }
+  
 }
