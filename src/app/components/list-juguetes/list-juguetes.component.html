@@ -23,7 +23,7 @@
                     <td>{{item.Tipo}}</td>
                     <td>{{item.Precio | currency}}</td>
                     <td>
-                        <i class="fas fa-edit fa-lg text-info" [routerLink]="['/edit-juguetes',item.Id,item.Name,item.Tipo,item.Precio]"></i>
+                        <i class="fas fa-edit fa-lg text-info" [routerLink]="['/edit-juguetes',item.Id]"></i>
                         <i (click)="eliminarJuguete(item.Id)"class="fas fa-trash-alt fa-lg text-danger"></i>
                     </td>
                   </tr>

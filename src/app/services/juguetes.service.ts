@@ -41,7 +41,20 @@ export class JuguetesService {
       this.eliminarjuguete(a, db);
     });
   }
-
+  async mostrar(Id:number){
+    var a: object;
+    const db = getFirestore();
+    const q= query(collection(db, "items"), where("Id", "==", Id))
+    const querySnapshot = await getDocs(q);
+    const resultados: object[]= [];
+    
+    querySnapshot.forEach(doc => {
+      a=doc.data();
+      console.log(a);
+      resultados.push(a);
+    });
+    return resultados;
+  }
   async update(juguete: any, Id:number){
     const db = getFirestore();
     const q= query(collection(db, "items"), where("Id", "==", Id))

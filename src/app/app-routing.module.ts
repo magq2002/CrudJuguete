@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'list-juguetes', pathMatch: 'full'},
   {path: 'list-juguetes', component: ListJuguetesComponent},
   {path: 'create-juguetes', component: CreateJuguetesComponent},
-  {path: 'edit-juguetes/:id/:name/:tipo/:precio', component: EditJuguetesComponent},
+  {path: 'edit-juguetes/:id', component: EditJuguetesComponent},
   {path: '**', redirectTo: 'list-juguetes', pathMatch: 'full'},
 ];
 
