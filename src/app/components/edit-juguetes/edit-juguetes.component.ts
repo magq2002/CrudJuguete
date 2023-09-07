@@ -31,23 +31,12 @@ export class EditJuguetesComponent {
     ngOnInit(): void {
       
       var id:any = this.aRoute.snapshot.paramMap.get('id');
-      var name:any = this.aRoute.snapshot.paramMap.get('name');
-      var tipo:any = this.aRoute.snapshot.paramMap.get('tipo');
-      var precio:any = this.aRoute.snapshot.paramMap.get('precio');
-
       const idP: number = parseInt(id);
-      const precioP: number = parseInt(precio);
-
-      this._jugueteService.items
+      this._jugueteService.mostrar(idP).then((a) =>{
+        this.jugueteDatos = a[0];
+        this.updateJuguete.patchValue(this.jugueteDatos);
+      });
       
-        this.jugueteDatos ={
-          Id: [idP],
-          Name: [name],
-          Tipo: [tipo],
-          Precio:[precioP]
-        }
-        this.updateJuguete.patchValue(this.jugueteDatos)
-      ;
       
       
     }
