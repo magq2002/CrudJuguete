@@ -1,10 +1,10 @@
 export const environment = {
   firebase: {
-    apiKey: "AIzaSyA4jkg4TiE9BfNslTfNvcpyd0RofS44ffI",
-    authDomain: "jugueteria-a9712.firebaseapp.com",
-    projectId: "jugueteria-a9712",
-    storageBucket: "jugueteria-a9712.appspot.com",
-    messagingSenderId: "753338453416",
-    appId: "1:753338453416:web:5856db2b843cec1922e19d"
+    apiKey: "AIzaSyCiNt_LwBPBjiM_z_ESqKOBHJFeCat6HCE",
+    authDomain: "hotelmiluansa.firebaseapp.com",
+    projectId: "hotelmiluansa",
+    storageBucket: "hotelmiluansa.appspot.com",
+    messagingSenderId: "602423957010",
+    appId: "1:602423957010:web:35c8cea15eb1e81aaf6acb"
   },
 };

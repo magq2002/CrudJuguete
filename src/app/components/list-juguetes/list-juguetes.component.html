@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="card">
         <div class="card-body">
-            <span class="h3">Listado de Juguetes</span>
+            <span class="h3">Listado Check-in</span>
               <input [(ngModel)]="filterItem" name="filterItem" class="form-control mt-4" type="text" placeholder="Buscar por nombre completo" aria-label="Search">
             
             <div class="items" *ngIf="items$ | async as items">
@@ -11,17 +11,32 @@
                   <tr>
                     <th>Id</th>
                     <th>Nombre</th>
-                    <th>Tipo</th>
-                    <th>Precio</th>
-                    <th></th>
+                    <th>Tipo de documento</th>
+                    <th>Numero documento</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Edad</th>
+                    <th>Ciudad</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Proposito de Viaje</th>
+                    <th>EPS/ARL</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let item of items | filter: filterItem; let i= index  ">
                     <th>{{item.Id}}</th>
-                    <td>{{item.Name}}</td>
-                    <td>{{item.Tipo}}</td>
-                    <td>{{item.Precio | currency}}</td>
+                    <th>{{item.Name}}</th>
+                    <th>{{item.TipoDocumento}}</th>
+                    <th>{{item.NumeroDocumento}}</th>
+                    <th>{{item.FechaNacimiento}}</th>
+                    <th>{{item.Edad}}</th>
+                    <th>{{item.Ciudad}}</th>
+                    <th>{{item.Direccion}}</th>
+                    <th>{{item.Telefono}}</th>
+                    <th>{{item.Correo}}</th>
+                    <th>{{item.PropositoViaje}}</th>
+                    <th>{{item.Eps}}</th>
                     <td>
                         <i class="fas fa-edit fa-lg text-info" [routerLink]="['/edit-juguetes',item.Id]"></i>
                         <i (click)="eliminarJuguete(item.Id)"class="fas fa-trash-alt fa-lg text-danger"></i>

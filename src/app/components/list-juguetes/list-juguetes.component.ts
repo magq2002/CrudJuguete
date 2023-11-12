@@ -35,7 +35,7 @@ export class ListJuguetesComponent implements OnInit {
   }
   eliminarJuguete(id: number){
     this.conexion.eliminar(id).then(() =>{
-      this.toastr.error('El juguete fue eliminada con éxito!', 'Juguete Eliminado!');
+      this.toastr.error('Check-in fue eliminado con éxito!', 'Check-in Eliminado!');
       
     }).catch(error =>{
       console.log('error');

@@ -24,8 +24,16 @@ export class EditJuguetesComponent {
       this.updateJuguete = this.fa.group({
         Id:['', Validators.required],
         Name:['', Validators.required],
-        Tipo:['', Validators.required],
-        Precio:['', Validators.required],
+        TipoDocumento:['', Validators.required],
+        NumeroDocumento:['', Validators.required],
+        FechaNacimiento:['', Validators.required],
+        Edad:['', Validators.required],
+        Ciudad:['', Validators.required],
+        Direccion:['', Validators.required],
+        Telefono:['', Validators.required],
+        Correo:['', Validators.required],
+        PropositoViaje:['', Validators.required],
+        Eps:['', Validators.required],
       })
     }
     ngOnInit(): void {
@@ -53,12 +61,20 @@ export class EditJuguetesComponent {
     const juguete:any={
       Id: this.updateJuguete.value.Id,
       Name: this.updateJuguete.value.Name,
-      Tipo: this.updateJuguete.value.Tipo,
-      Precio: this.updateJuguete.value.Precio,
+      TipoDocumento: this.updateJuguete.value.TipoDocumento,
+      NumeroDocumento: this.updateJuguete.value.NumeroDocumento,
+      FechaNacimiento: this.updateJuguete.value.FechaNacimiento,
+      Edad: this.updateJuguete.value.Edad,
+      Ciudad: this.updateJuguete.value.Ciudad,
+      Direccion: this.updateJuguete.value.Direccion,
+      Telefono: this.updateJuguete.value.Telefono,
+      Correo: this.updateJuguete.value.Correo,
+      PropositoViaje: this.updateJuguete.value.PropositoViaje,
+      Eps: this.updateJuguete.value.Eps,
     }
     
     this._jugueteService.update(juguete, idP).then(() =>{
-      this.toastr.info('El juguete fue actualizado con éxito!', 'Juguete Actualizado!');
+      this.toastr.info('Check-in fue actualizado con éxito!', 'Check-in Actualizado!');
       this.router.navigate(['/list-juguetes']);
     }).catch((error: any) => {
       console.log(error);
